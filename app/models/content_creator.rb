@@ -1,0 +1,2 @@
+class ContentCreator < ApplicationRecord
+end

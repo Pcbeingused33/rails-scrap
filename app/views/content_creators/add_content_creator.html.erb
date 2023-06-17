@@ -1,0 +1,42 @@
+<h1>Add content creator</h1>
+
+<%= form_with model: @content_creator, url: add_content_creator_path do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "name" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :tik_tok_account %>
+    <%= form.text_field :tiktok, class: "form-control", placeholder: "TikTok account" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :instagram_account %>
+    <%= form.text_field :instagram, class: "form-control", placeholder: "Instagram account" %>
+  </div>
+    <div class="mb-3">
+    <%= form.label :facebook_account %>
+    <%= form.text_field :facebook, class: "form-control", placeholder: "Facebook account" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :youtube_account %>
+    <%= form.text_field :youtube, class: "form-control", placeholder: "Youtube account" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit" %>
+  </div>
+
+   <div class="mb-3">
+    <a href="/" class="btn-medium" style=" background-color: #4CAF50;
+    border: none;
+  color: white;
+  padding: 6px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"
+  >Return home</a>
+  </div>
+
+
+<% end %>

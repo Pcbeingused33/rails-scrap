@@ -1,0 +1,2 @@
+module ContentCreatorsHelper
+end

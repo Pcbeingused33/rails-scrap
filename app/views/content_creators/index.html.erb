@@ -1,0 +1,77 @@
+<h1>All content creators</h1>
+
+<h2>Content Creator Views</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table style="padding-top: 30px">
+  <div class="card">
+    <a href="add_content_creator" class="btn-medium" style="background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;">
+    Import creators</a>
+  </div>
+    <tr>
+    <% counter = 0 %>
+    <%= @content_creators.map do |instance| %>
+      <tr>
+        <th>Name</th>
+        <th>TikTok views</th>
+        <th>Facebook views</th>
+        <th>Youtube views</th>
+        <th>Instagram views</th>
+
+      </tr>
+
+      <% array = [] %>
+      <% @content_creators.map {|creator| array << creator.instagram} %>
+      <% ig_parser(array) %>
+      <td><li><%= instance.name %></li></td>
+      <td><li><%= run_scraper_tiktok(instance.tiktok) %></li></td>
+      <td><li><%= run_scraper_facebook(instance.facebook) %></li></td>
+      <td><li><%= run_scraper_youtube(instance.youtube) %></li></td>
+      <% @python_script %>
+      <td><li><%= read_csv[counter] %></li></td>
+
+    <% counter += 1 %>
+    <% end %>
+  </tr>
+</table>
+
+</body>
+</html>
+
+<%#= @content_creators.map {|string| p [string.name, string.instagram, string.tiktok, string.facebook, string.youtube].flatten } %>
+
+
+<%# <%= ig_parser %>
+
+  <%# <% import_string %>
+  <%#= exec("scrapers/instagram_scraper.py") %>
