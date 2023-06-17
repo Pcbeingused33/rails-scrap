@@ -18,7 +18,7 @@ class ContentCreatorsController < ApplicationController
   # base_uri 'api.stackexchange.com'
 
   def index
-    @python_script = `python /home/ale/code/Pcbeingused33/rails-crud/scrapers/instagram_scraper.py`
+    @python_script = `python app/scrapers/instagram_scraper.py`
     @content_creators = ContentCreator.all
     # array = []
     # CSV.foreach(ig_views) do |row|
