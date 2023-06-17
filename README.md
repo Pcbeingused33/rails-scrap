@@ -22,3 +22,27 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Instructions:
+
+download rails app (.zip)
+
+extract file
+
+run terminal
+
+`rbenv install 3.1.2`
+
+`sudo apt-get install sqlite3 libsqlite3-dev`
+# or
+`sudo apt install -y postgresql postgresql-contrib libpq-dev build-essential`
+
+gem install rails
+
+rails db:create
+
+rails db:migrate
+
+rails s
+
+go to localhost:3000 on your website
