@@ -197,12 +197,14 @@ class ContentCreatorsController < ApplicationController
     views2 = views.to_s.scan(/label(.*?)views/)
     result = views2.map {|x| x.to_s.scan(/[0-9]+/)}
     total = 0
+    #
 
     result.map do |array|
       if array.size == 2
         new_array = []
         new_array << array[0]
-        new_array << array[1] * 100
+        integer = array[1].to_i * 100
+        new_array << integer.to_s
         final_array = new_array.join.to_i
         total += final_array
       else
@@ -210,11 +212,7 @@ class ContentCreatorsController < ApplicationController
       end
       total
     end
-
-    final_result = result.flatten.map(&:to_i).sum
-
-    p "#{final_result} views"
-
+  p "#{total} views"
   end
 
   private
