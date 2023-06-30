@@ -44,7 +44,6 @@ tr:nth-child(even) {
       <tr>
         <th>Name</th>
         <th>TikTok views</th>
-        <th>Facebook views</th>
         <th>Youtube views</th>
         <th>Instagram views</th>
 
@@ -55,7 +54,6 @@ tr:nth-child(even) {
       <% ig_parser(array) %>
       <td><li><%= instance.name %></li></td>
       <td><li><%= run_scraper_tiktok(instance.tiktok) %></li></td>
-      <td><li><%= run_scraper_facebook(instance.facebook) %></li></td>
       <td><li><%= run_scraper_youtube(instance.youtube) %></li></td>
       <% @python_script %>
       <td><li><%= read_csv[counter] %></li></td>

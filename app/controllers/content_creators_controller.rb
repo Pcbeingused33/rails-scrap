@@ -212,12 +212,13 @@ class ContentCreatorsController < ApplicationController
       end
       total
     end
-  p "#{total} views"
+
+    p "#{total} views"
   end
 
   private
 
   def content_creator_params
-    params.require(:content_creator).permit(:name, :tiktok, :instagram, :facebook, :youtube)
+    params.require(:content_creator).permit(:name, :tiktok, :instagram, :youtube)
   end
 end

@@ -4,7 +4,6 @@ class CreateContentCreators < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :tiktok
       t.string :instagram
-      t.string :facebook
       t.string :youtube
 
       t.timestamps
